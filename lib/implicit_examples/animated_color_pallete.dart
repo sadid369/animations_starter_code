@@ -37,21 +37,25 @@ class _AnimatedColorPaletteState extends State<AnimatedColorPalette> {
         title: const Text('Color Palette Generator'),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            for (Color color in currentPalette)
-              Container(
-                width: 100,
-                height: 100,
-                color: color,
-                margin: const EdgeInsets.all(8),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              for (Color color in currentPalette)
+                AnimatedContainer(
+                  duration: const Duration(milliseconds: 2000),
+                  curve: Curves.bounceInOut,
+                  width: 100,
+                  height: 100,
+                  color: color,
+                  margin: const EdgeInsets.all(8),
+                ),
+              ElevatedButton(
+                onPressed: regeneratePalette,
+                child: const Text('Generate New Palette'),
               ),
-            ElevatedButton(
-              onPressed: regeneratePalette,
-              child: const Text('Generate New Palette'),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
