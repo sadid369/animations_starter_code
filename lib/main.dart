@@ -1,3 +1,4 @@
+import 'package:animation_starter_code/explicit_examples/list_animation.dart';
 import 'package:animation_starter_code/explicit_examples/login_animation.dart';
 import 'package:animation_starter_code/implicit_examples/animated_color_pallete.dart';
 import 'package:animation_starter_code/implicit_examples/animated_shopping_cart_button.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const LoginScreenAnimation(),
+      home: const ListAnimation(),
     );
   }
 }
